@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Courses = () => (
   <div className="main-content courses">
@@ -13,6 +13,6 @@ const Courses = () => (
     
     {/* Write routes here... */}
   </div>
-);
+)
 
-export default Courses;
+export default Courses
