@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
 
+import {Link} from 'react-router-dom'
+
 class Home extends Component {    
-  
+  handleSubmit = (event) =>{
+    event.preventDefault()
+    let teacherName = this.name.value
+    let teacherTopic = this.topic.value
+    let path = `teachers/${teacherTopic}/${teacherName}`
+  }
+
   render() {
     return (
       <div className="main-content home">
@@ -10,7 +18,16 @@ class Home extends Component {
         <p>Learn front end web development and much more! This simple directory app offers a preview of our course library. Choose from many hours of content, from HTML to CSS to JavaScript. Learn to code and get the skills you need to launch a new career in front end web development.</p>
         <p>We have thousands of videos created by expert teachers on web design and front end development. Our library is continually refreshed with the latest on web technology so you will never fall behind.</p>
         <hr />
-        
+        <h3>Newest Teachers</h3>
+        <Link to="teachers/ReactJS/Rick-Brown">Rick Brown</Link>
+        <Link to="teachers/JavaScript/Tommy-Wingo">Tommy Wingo</Link>
+        <hr />
+        <h3>Submit A New Teacher</h3>
+        <form>
+          <input type="text" placeholder="Name" ref={input => this.name.input} />
+          <input type="text" placeholder="Topic" ref={input => this.topic.input} />
+          <button type="submit">Submit</button>
+        </form>
       </div>
     )
   }
